@@ -23,6 +23,9 @@ class CreateBooksTable extends Migration
             $table->string('publishing_name');
             $table->string('book_genre');
             $table->date('release_date');
+            $table->string('status')->nullable();
+            $table->string('category');
+            
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('user_name');
             $table->date('birthday');
-            $table->char('cpf', 11);
+            $table->string('cpf');
             $table->string('user_type');
             $table->string('email')->unique();
             $table->string('password');
