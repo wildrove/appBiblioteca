@@ -18,5 +18,23 @@ Route::get('/', function () {
 });
 
 Route::get('/books', function() {
-	return view('books');
+	$users = \App\User::paginate();
+
+
+
+	return $users;
 });
+
+Route::get('admin/users', 'Admin\\UserController@index');
+
+/*
+	'first_name' => 'Admin',
+		'last_name' => 'admin',
+		'user_name' => 'admin',
+		'birthday' => '1984-10-06',
+		'user_type' => 'Administrator',
+		'email' => 'admin@gmail.com',
+		'cpf' => '12345678980',
+		'password' => md5('12345678')
+
+*/		
