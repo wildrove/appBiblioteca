@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<body>
-		<div class="container">
+
 			<div class="row">
 		        <div class="col-md-12">
 		        	<div class="table-responsive mt-5">
@@ -90,9 +89,7 @@
 		    	</div>
 		    <!-- /.modal-content --> 
 		  	</div>
-		      <!-- /.modal-dialog --> 
-		</div>
-		<!-- Jquery personal modal -->
+		<!-- Jquery checkbox select -->
 		<script src="{{ asset('/js/app.js') }}"></script>
-	</body>
+		
 @endsection

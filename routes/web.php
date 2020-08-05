@@ -17,16 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/books', function() {
-	$users = \App\User::paginate();
+Route::prefix('admin')->namespace('Admin')->group(function (){
 
+	Route::prefix('users')->group(function() {
 
-
-	return $users;
+		Route::get('/', 'UserController@index');
+	});
 });
-
-Route::get('admin/users', 'Admin\\UserController@index');
-
 /*
 	'first_name' => 'Admin',
 		'last_name' => 'admin',
