@@ -9,8 +9,8 @@ class UserController extends Controller
 {
     public function index()
     {
-    	$users = \App\User::paginate(10);
+    	$users = \App\User::orderBy('first_name', 'ASC')->paginate(10);
 
-    	return view('admin.user.index', compact('users'));
+    	return view('admin.user.users', compact('users'));
     }
 }
