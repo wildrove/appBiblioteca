@@ -4,9 +4,12 @@
 
 			<div class="row">
 		        <div class="col-md-12">
-		        	<div class="table-responsive mt-5">
-		        		<h4 class="mb-3">Bilioteca - Usuários</h4>
-		     			<table id="mytable" class="table table-bordred table-striped border">  
+		        	<div class="mt-5 mb-3">
+		        		<a class=" btn btn-success mb-3" href="" title="novo" style="float: right">Novo Usuário</a>
+		        		<h4 class="">Bilioteca - Usuários</h4>
+		        	</div>
+		        	<div class="table-responsive">
+		     			<table id="mytable" class="table table-bordred table-striped">  
 		                   <thead class="">    
 			                   	<th><input type="checkbox" id="checkall" /></th>
 			                   	<th>Nome</th>
@@ -28,9 +31,9 @@
 								    <td>{{$user->email}}</td>
 								    <td>
 								    	<p data-placement="top" data-toggle="tooltip" title="editar">
-								    		<button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
+								    		<a class="btn btn-primary btn-xs" href="" data-title="Edit" data-toggle="modal" data-target="#edit" >
 								    			<span class="glyphicon glyphicon-pencil">Editar</span>
-								    		</button>
+								    		</a>
 								    	</p>
 								    </td>
 								    <td>
@@ -50,26 +53,7 @@
 		        </div>
 			</div>
 		</div>
-		<!--Modal de Edição -->
-		<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-			<div class="modal-dialog">
-		    	<div class="modal-content">
-		        	<div class="modal-header">
-		        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-		        			<h4 class="modal-title custom_align" id="Heading">Editar Usuário</h4>
-		      		</div>
-		        	<div class="modal-body">
-		        		<form class="form" action="" method="">
-		        			
-		        				<button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Atualizar</button>
-		      				</div>
-		        		</form>	
-		      		</div>
-		    	</div>
-		    <!-- /.modal-content --> 
-			</div>
-		      <!-- /.modal-dialog --> 
-		</div>
+
 		<!-- Modal de Excluir -->
 		<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 			<div class="modal-dialog">
@@ -91,5 +75,5 @@
 		  	</div>
 		<!-- Jquery checkbox select -->
 		<script src="{{ asset('/js/app.js') }}"></script>
-		
+
 @endsection

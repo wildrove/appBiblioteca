@@ -7,10 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<!-- Peresonal CSS -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
+	<!-- App Favico -->
+	<link rel="shortcut icon" href="{{asset('/img/app-favico.ico')}}" />
 	<!-- Jquery CDN -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="">
 	<div class="container">
 
 		@yield('content')

@@ -11,6 +11,6 @@ class UserController extends Controller
     {
     	$users = \App\User::orderBy('first_name', 'ASC')->paginate(10);
 
-    	return view('admin.user.users', compact('users'));
+    	return view('admin.user.index', compact('users'));
     }
 }
