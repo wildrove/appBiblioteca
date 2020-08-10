@@ -5,8 +5,10 @@
 			<div class="row">
 		        <div class="col-md-12">
 		        	<div class="mt-5 mb-3">
-		        		<a class=" btn btn-success mb-3" href="" title="novo" style="float: right">Novo Usuário</a>
-		        		<h4 class="">Bilioteca - Usuários</h4>
+		        		<a class=" btn btn-success mb-3" href="{{route('admin.users.create')}}" data-toggle="tooltip" title="novo usuário" style="float: right">
+		        			<i class="fas fa-user-plus fa-2x"></i>
+		        		</a>
+		        		<h4 class="h4">Biblioteca - Usuários</h4>
 		        	</div>
 		        	<div class="table-responsive">
 		     			<table id="mytable" class="table table-bordred table-striped">  
@@ -31,15 +33,17 @@
 								    <td>{{$user->email}}</td>
 								    <td>
 								    	<p data-placement="top" data-toggle="tooltip" title="editar">
-								    		<a class="btn btn-primary btn-xs" href="" data-title="Edit" data-toggle="modal" data-target="#edit" >
-								    			<span class="glyphicon glyphicon-pencil">Editar</span>
+								    		<a class="btn btn-primary btn-xs" href="{{route('admin.users.edit', ['user' => $user->id])}}"  >
+								    			<!-- Botão de editar -->
+								    			<i class="fas fa-edit"></i>
 								    		</a>
 								    	</p>
 								    </td>
 								    <td>
 								    	<p data-placement="top" data-toggle="tooltip" title="excluir">
 								    		<button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-								    			<span class="glyphicon glyphicon-trash">Excluir</span>
+								    			<!-- Botão de excluir -->
+								    		<i class="fas fa-trash"></i>
 								    		</button>
 								    	</p>
 								    </td>
@@ -58,18 +62,21 @@
 		<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 			<div class="modal-dialog">
 		    	<div class="modal-content">
-		        	<div class="modal-header">
-		        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-		        		<h4 class="modal-title custom_align" id="Heading">Excluir Dados</h4>
-		      		</div>
-		          	<div class="modal-body"> 
-		       			<div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span>Tem certeza que deseja excluir?
-		       			</div>  
-		      		</div>
-		        	<div class="modal-footer ">
-		        		<button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span>Sim</button>
-		        		<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Não</button>
-		      		</div>
+		    		<form class="form" action="{{route('admin.users.destroy', ['user' => $user->id])}}" method="get">
+		    			<input type="hidden" name="_token" value="{{csrf_token()}}">
+			        	<div class="modal-header">
+			        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+			        		<h4 class="modal-title custom_align" id="Heading">Excluir Usuário</h4>
+			      		</div>
+			          	<div class="modal-body">	
+			          			<div class=" form-control alert-danger"><span class="glyphicon glyphicon-warning-sign"></span>Tem certeza que deseja excluir este usuário?
+			       			</div> 
+			      		</div>
+			        	<div class="modal-footer ">
+			        		<button type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span>Sim</button>
+			        		<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Não</button>
+			      		</div>
+		      		</form>
 		    	</div>
 		    <!-- /.modal-content --> 
 		  	</div>

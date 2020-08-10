@@ -29,7 +29,7 @@ class UserTableSeeder extends Seeder
 
         */
 
-        factory(\App\User::class, 40)->create()->each(function($user){
+        factory(\App\User::class, 30)->create()->each(function($user){
             $user->books()->save(factory(\App\Book::class)->make());
         });
     }

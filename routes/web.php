@@ -17,11 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('admin')->namespace('Admin')->group(function (){
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
 
-	Route::prefix('users')->group(function() {
+	Route::prefix('users')->name('users.')->group(function() {
 
-		Route::get('/', 'UserController@index');
+		Route::get('/', 'UserController@index')->name('index');
+		Route::get('/create', 'UserController@create')->name('create');
+		Route::post('/user', 'UserController@user')->name('user');
+		Route::get('{user}/edit', 'UserController@edit')->name('edit');
+		Route::post('/update/{user}', 'UserController@update')->name('update');
+		Route::get('/destroy/{user}', 'UserController@destroy')->name('destroy');
 	});
 });
 /*
