@@ -27,6 +27,12 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
 		Route::get('{user}/edit', 'UserController@edit')->name('edit');
 		Route::post('/update/{user}', 'UserController@update')->name('update');
 		Route::get('/destroy/{user}', 'UserController@destroy')->name('destroy');
+
+		});
+
+	Route::prefix('books')->name('books.')->group(function() {
+
+		Route::get('/', 'BookController@index')->name('index');
 	});
 });
 /*

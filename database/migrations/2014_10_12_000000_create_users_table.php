@@ -18,9 +18,9 @@ class CreateUsersTable extends Migration
             
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('user_name');
+            $table->string('user_name')->unique();
             $table->date('birthday');
-            $table->string('cpf');
+            $table->string('cpf')->unique();
             $table->string('user_type');
             $table->string('email')->unique();
             $table->string('password');

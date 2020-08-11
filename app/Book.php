@@ -8,12 +8,18 @@ class Book extends Model
 {
 
 	protected $fillable = [
-		'book_name', 'description', 'author_name', 'publishing_name',
-		'book_genre', 'release_date', 'status', 'category',
+		'book_name', 'description', 'author_name', 'publishing_name', 'book_image',
+		'book_genre', 'release_date', 'category',
 	];
 
     public function user()
     {
     	return $this->belongsTo(\App\User::class);
     }
+
+    public function rent()
+    {
+    	return belongsTo(\App\Rent::class);
+    }
+
 }

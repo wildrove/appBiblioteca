@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(\App\Book::class);
     }
+
+    public function rent()
+    {
+        return $this->belongsTo(\App\Rent::class);
+    }
 }

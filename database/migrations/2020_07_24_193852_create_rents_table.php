@@ -17,7 +17,8 @@ class CreateRentsTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('book_id')->unsigned();
-
+            $table->string('status');
+            
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('book_id')->references('id')->on('books');
 
