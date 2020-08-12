@@ -11,9 +11,9 @@ $factory->define(\App\Book::class, function (Faker $faker) {
         'description' => $faker->sentence,
         'author_name' => $faker->name,
         'publishing_name' => $faker->name,
+        'book_image' => 'default_img.png',
         'book_genre' => $faker->firstName,
         'release_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
-        'status' => 'avaliable',
         'category' => $faker->firstName,
     ];
 });

@@ -1,1 +1,7 @@
+/* ===================== Create Book ============================== */
 
+input[type='file']
+{
+	background: #cccccc;
+	color: #000000;
+}

@@ -33,6 +33,8 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
 	Route::prefix('books')->name('books.')->group(function() {
 
 		Route::get('/', 'BookController@index')->name('index');
+		Route::get('/create', 'BookController@create')->name('create');
+		Route::post('/store', 'BookController@store')->name('store');
 	});
 });
 /*

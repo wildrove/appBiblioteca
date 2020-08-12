@@ -8,7 +8,7 @@
 		        		<a class=" btn btn-dark mb-3" href="{{route('admin.users.index')}}" data-toggle="tooltip" title="usuários" style="float: right">
 		        			<i class="fas fa-users fa-lg"></i>
 		        		</a>
-		        		<a class=" btn btn-dark mb-3 mr-2" href="" data-toggle="tooltip" title="novo livro" style="float: right">
+		        		<a class=" btn btn-dark mb-3 mr-2" href="{{route('admin.books.create')}}" data-toggle="tooltip" title="novo livro" style="float: right">
 		        			<i class="fas fa-book-medical fa-lg"></i>
 		        		</a>
 		        		<h4 class="h4">Biblioteca - Livros</h4>
