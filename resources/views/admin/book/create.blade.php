@@ -21,19 +21,19 @@
 				<label for="description">Descrição Livro:</label>
 				<textarea class="form-control" name="description" maxlength="2000"></textarea>
 			</div>
-			<div class="col-md-6 form-group border">
+			<div class="col-md-6 form-group">
 				<label for="book_image">Imagem Livro:</label>
 				<input class="form-control-file" type="file" name="book_image" id="book_file" accept=".jpg, .png">
 			</div>
 		</div><!-- Fim linha 2 -->
 		<div class="form-row"><!-- Inicio linha 3 -->
 			<div class="col-md-6 form-group">
-				<label for="book_genre">Genero Livro:</label>
-				<input class="form-control" type="text" name="book_genre">
+				<label for="publishing_name">Nome Editora:</label>
+				<input class="form-control" type="text" name="publishing_name">
 			</div>
 			<div class="col-md-6 form-group">
-				<label for="release_date">Data Publicação:</label>
-				<input class="form-control" type="date" name="release_date">
+				<label for="release_date">Ano Lançamento:</label>
+				<input class="form-control" type="text" name="release_date">
 			</div>
 		</div><!-- Fim linha 3 -->
 		<div class="form-row"><!-- Inicio linha 4 -->

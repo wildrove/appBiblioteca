@@ -16,6 +16,12 @@ class BookController extends Controller
     {
             $books = \App\Book::orderBy('book_name', 'ASC')->paginate(10);
 
+            foreach ($books as $book ) {
+                if($book->book_image == 'noimage.png'){
+                    $book->book_image = 'defaultimage.jpg';
+                }
+            }
+
             return view('admin.book.index', compact('books'));
     }
 
@@ -37,13 +43,35 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        if(!is_null($request)){
-            flash('Dados recebidos com sucesso')->success();
-        }else{
-            flash('Dados recebidos com sucesso')->error();
+        // Handle File Upload
+        if($request->hasFile('book_image')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('book_image')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('book_image')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('book_image')->storeAs('books', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.png';
         }
-        
-        return redirect()->route('admin.books.create');
+        //save in database
+        $itens = \App\Book::create([
+            'book_name' => mb_strtolower($request->book_name),
+            'author_name' => mb_strtolower($request->author_name),
+            'publishing_name' => mb_strtolower($request->publishing_name),
+            'description' => $request->description,
+            'release_date' => $request->release_date,
+            'category' => mb_strtolower($request->category),
+            'book_image' => $fileNameToStore
+        ]);
+
+        flash('Livro criado com sucesso !')->success();
+
+        return redirect()->route('admin.books.index');
     }
 
     /**

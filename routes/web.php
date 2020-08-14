@@ -23,7 +23,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
 
 		Route::get('/', 'UserController@index')->name('index');
 		Route::get('/create', 'UserController@create')->name('create');
-		Route::post('/user', 'UserController@user')->name('user');
+		Route::post('/store', 'UserController@user')->name('store');
 		Route::get('{user}/edit', 'UserController@edit')->name('edit');
 		Route::post('/update/{user}', 'UserController@update')->name('update');
 		Route::get('/destroy/{user}', 'UserController@destroy')->name('destroy');
@@ -37,14 +37,4 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
 		Route::post('/store', 'BookController@store')->name('store');
 	});
 });
-/*
-	'first_name' => 'Admin',
-		'last_name' => 'admin',
-		'user_name' => 'admin',
-		'birthday' => '1984-10-06',
-		'user_type' => 'Administrator',
-		'email' => 'admin@gmail.com',
-		'cpf' => '12345678980',
-		'password' => md5('12345678')
 
-*/		

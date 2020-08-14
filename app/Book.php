@@ -12,11 +12,11 @@ class Book extends Model
 		'book_genre', 'release_date', 'category',
 	];
 
-    public function user()
+ /*   public function user()
     {
     	return $this->belongsTo(\App\User::class);
     }
-
+*/
     public function rent()
     {
     	return belongsTo(\App\Rent::class);

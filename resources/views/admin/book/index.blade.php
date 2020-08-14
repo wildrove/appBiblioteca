@@ -17,23 +17,28 @@
 		     			<table id="mytable" class="table table-bordred table-striped">  
 		                   <thead class="">    
 			                   	<th><input type="checkbox" id="checkall" /></th>
+			                   	<th>Imagem</th>
 			                   	<th>Nome Livro</th>
 			                    <th>Nome Autor</th>
-			                    <th>Usuário</th>
 			                    <th>Nome Editora</th>     
-			                    <th>Data Lançamento</th>
+			                    <th>Lançamento</th>
+			                    <th>Disciplina</th>
 			                    <th>Editar</th>
 			                    <th>Excluir</th>
 		                   </thead>
 		    			   <tbody>
 		    			   @foreach($books as $book)
+
 							    <tr>
 								    <td><input type="checkbox" class="checkthis" /></td>
+								    <td>
+								    	<img style="width: 50px;height: 50px" src="{{ url('storage/books/'.$book->book_image) }}" alt="{{$book->book_image}}">
+								    </td>
 								    <td>{{$book->book_name}}</td>
 								    <td>{{$book->author_name}}</td>
 								    <td>{{$book->publishing_name}}</td>
 								    <td>{{$book->release_date}}</td>
-								    <td>{{$book->book_genre}}</td>
+								    <td>{{$book->category}}</td>
 								    <td>
 								    	<p data-placement="top" data-toggle="tooltip" title="editar">
 								    		<a class="btn btn-primary btn-xs" href=""  >
@@ -51,6 +56,7 @@
 								    	</p>
 								    </td>
 							    </tr>
+
 							@endforeach
 		    				</tbody>
 						</table>

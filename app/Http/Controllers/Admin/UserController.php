@@ -21,7 +21,7 @@ class UserController extends Controller
     }
 
 
-    public function user(Request $request)
+    public function store(Request $request)
     {
     	$users = $request->all();
     	$users['password'] = \Hash::make($users['password']);

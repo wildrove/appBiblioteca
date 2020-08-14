@@ -3,7 +3,7 @@
 
 @section('content')
 
-	<form class="form" method="post" action="{{route('admin.users.user')}}">
+	<form class="form" method="post" action="{{route('admin.users.store')}}">
 		<h4 class="">Biblioteca - Cadastro de Usuário</h4>
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 		<div class="row form-group"><!-- Linha 1 -->
