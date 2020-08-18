@@ -1,3 +1,4 @@
+
 /* ===================== Create Book ============================== */
 
 input[type='file']
@@ -36,25 +37,33 @@ input[type='file']
 }
 
 .div-card-img{
-max-width: 286px;
-height: 180px;
+	max-width: 286px;
+	height: 180px;
 }
 
-/*
-.div-card-col{
-	max-width: 270px !important;
-	margin-right: 0px;
-	margin-bottom: 10px;
+.card-body {
+	background: rgb(161,19,255);
+	background: linear-gradient(90deg, rgba(161,19,255,1) 100%, rgba(253,29,29,1) 100%, rgba(252,176,69,1) 100%);
 }
 
-.div-card{
-	max-width: 290px;
-	height: 100%;
+.card-body,
+.card-title,
+.btn-card-rent,
+p{
+	color: #fff;
+	font-weight: 500;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
-.div-card-img{
-	width: 300px;
-	height: 250px;
+h5, .card-title{
+	font-weight: 800;
 }
 
-*/
+.btn-card-rent{
+	background: #00ff2a;
+}
+
+.btn-card-rent:hover{
+	background: #06d027;
+}
+
