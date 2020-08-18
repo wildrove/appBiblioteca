@@ -38,3 +38,11 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
 	});
 });
 
+Route::prefix('app')->name('app.')->namespace('App')->group(function(){
+
+	Route::prefix('books')->name('books.')->group(function(){
+
+		Route::get('/', 'AppController@index')->name('index');
+	});
+});
+
