@@ -5,7 +5,10 @@
 
 	<form class="form" action="{{route('admin.users.update', ['user' => $user->id])}}" method="post">
 		<h4 class="">Biblioteca - Editar Usuário</h4>
-		<input type="hidden" name="_token" value="{{csrf_token()}}">
+		
+		@csrf
+		@method('PUT')
+
 		<div class="row form-group"><!-- Linha 1 -->
 			<div class="col-md-4">
 				<label for="first_name">Nome:</label>

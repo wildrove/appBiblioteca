@@ -5,11 +5,14 @@
 
 	<form class="form" method="post" action="{{route('admin.users.store')}}">
 		<h4 class="">Biblioteca - Cadastro de Usuário</h4>
-		<input type="hidden" name="_token" value="{{csrf_token()}}">
+		<!--<input type="hidden" name="_token" value="{{csrf_token()}}"> -->
+		
+		@csrf
+
 		<div class="row form-group"><!-- Linha 1 -->
 			<div class="col-md-4">
 				<label for="first_name">Nome:</label>
-				<input class="form-control" type="text" name="first_name" required="">
+				<input class="form-control" type="text" name="first_name">
 			</div>
 			<div class="col-md-4">
 				<label for="last_name">Sobrenome:</label>
@@ -24,7 +27,7 @@
 		<div class="row form-group"><!-- Linha 2 -->
 			<div class="col-md-4">
 				<label for="user_name">Nome Usuário:</label>
-				<input class="form-control" type="text" name="user_name" required="">
+				<input class="form-control" type="text" name="user_name">
 			</div>
 			<div class="col-md-4">
 				<label for="user_type">Tipo Usuário:</label>

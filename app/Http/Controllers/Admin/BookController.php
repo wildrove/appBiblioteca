@@ -4,17 +4,27 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Book;
 
 class BookController extends Controller
 {
+
+    private $book;
+
+    public function __construct(Book $book)
+    {
+        $this->book = $book;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-            $books = \App\Book::orderBy('book_name', 'ASC')->paginate(10);
+            $books = $this->book->orderBy('book_name', 'ASC')->paginate(10);
 
             foreach ($books as $book ) {
                 if($book->book_image == 'noimage.png'){
@@ -25,11 +35,13 @@ class BookController extends Controller
             return view('admin.book.index', compact('books'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         return view('admin.book.create');
@@ -41,6 +53,7 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         // Handle File Upload
@@ -59,7 +72,7 @@ class BookController extends Controller
             $fileNameToStore = 'noimage.png';
         }
         //save in database
-        $itens = \App\Book::create([
+        $itens = $this->book->create([
             'book_name' => mb_strtolower($request->book_name),
             'author_name' => mb_strtolower($request->author_name),
             'publishing_name' => mb_strtolower($request->publishing_name),
@@ -80,6 +93,7 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         //
@@ -91,6 +105,7 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
         //
@@ -103,6 +118,7 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         //
@@ -114,6 +130,7 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function destroy($id)
     {
         //

@@ -65,8 +65,11 @@
 		<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 			<div class="modal-dialog">
 		    	<div class="modal-content">
-		    		<form class="form" action="{{route('admin.users.destroy', ['user' => $user->id])}}" method="get">
-		    			<input type="hidden" name="_token" value="{{csrf_token()}}">
+		    		<form class="form" action="{{route('admin.users.destroy', ['user' => $user->id])}}" method="POST">
+		    			
+		    			@csrf
+		    			@method('DELETE')
+		    			
 			        	<div class="modal-header">
 			        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
 			        		<h4 class="modal-title custom_align" id="Heading">Excluir Usuário</h4>

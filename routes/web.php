@@ -19,23 +19,23 @@ Route::get('/', function () {
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function (){
 
+	
+	/*
 	Route::prefix('users')->name('users.')->group(function() {
 
 		Route::get('/', 'UserController@index')->name('index');
 		Route::get('/create', 'UserController@create')->name('create');
-		Route::post('/store', 'UserController@user')->name('store');
+		Route::post('/store', 'UserController@store')->name('store');
 		Route::get('{user}/edit', 'UserController@edit')->name('edit');
 		Route::post('/update/{user}', 'UserController@update')->name('update');
 		Route::get('/destroy/{user}', 'UserController@destroy')->name('destroy');
 
 		});
+	
+	*/
 
-	Route::prefix('books')->name('books.')->group(function() {
-
-		Route::get('/', 'BookController@index')->name('index');
-		Route::get('/create', 'BookController@create')->name('create');
-		Route::post('/store', 'BookController@store')->name('store');
-	});
+	Route::resource('users', 'UserController');
+	Route::resource('books', 'BookController');
 });
 
 Route::prefix('app')->name('app.')->namespace('App')->group(function(){

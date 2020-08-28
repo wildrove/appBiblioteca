@@ -5,7 +5,9 @@
 
 	<h4 class="h4">Biblioteca - Cadastro de Livros</h4>
 	<form class="form" action="{{route('admin.books.store')}}" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="_token" value="{{csrf_token()}}">
+		
+		@csrf
+		
 		<div class=" form-row"><!-- Iicio Linha 1 -->
 			<div class="col-md-6 form-group">
 				<label for="book_name">Nome Livro:</label>
