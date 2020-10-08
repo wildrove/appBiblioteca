@@ -90,11 +90,11 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $book
      * @return \Illuminate\Http\Response
      */
 
-    public function show($id)
+    public function show($book)
     {
         //
     }
@@ -102,13 +102,15 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $book
      * @return \Illuminate\Http\Response
      */
 
-    public function edit($id)
+    public function edit($book)
     {
-        //
+        $book = $this->book->findOrFail($book);
+
+        return view('admin.book.edit', compact('book'));
     }
 
     /**
@@ -119,9 +121,40 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $book)
     {
-        //
+        $book = $this->book->findOrFail($book);
+
+        // Handle File Upload
+        if($request->hasFile('book_image')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('book_image')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('book_image')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('book_image')->storeAs('books', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.png';
+        }
+        //save in database
+        $book->update([
+            'book_name' => mb_strtolower($request->book_name),
+            'author_name' => mb_strtolower($request->author_name),
+            'publishing_name' => mb_strtolower($request->publishing_name),
+            'description' => $request->description,
+            'release_date' => $request->release_date,
+            'category' => mb_strtolower($request->category),
+            'book_image' => $fileNameToStore
+        ]);
+
+
+        flash('Livro atualizado com sucesso !')->success();
+
+        return redirect()->route('admin.books.index');
     }
 
     /**
@@ -131,8 +164,14 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function destroy($id)
+    public function destroy($book)
     {
-        //
+        $book = $this->book->findOrFail($book);
+
+        $book->delete();
+
+        flash('Livro removido com sucesso !')->success();
+
+        return redirect()->route('admin.books.index');
     }
 }

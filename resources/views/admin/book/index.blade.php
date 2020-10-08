@@ -43,7 +43,7 @@
 								    <td>{{$book->category}}</td>
 								    <td>
 								    	<p data-placement="top" data-toggle="tooltip" title="editar">
-								    		<a class="btn btn-primary btn-xs" href=""  >
+								    		<a class="btn btn-primary btn-xs" href="{{route('admin.books.edit', ['book' => $book->id])}}"  >
 								    			<!-- Botão de editar -->
 								    			<i class="fas fa-edit"></i>
 								    		</a>
@@ -73,8 +73,11 @@
 		<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 			<div class="modal-dialog">
 		    	<div class="modal-content">
-		    		<form class="form" action="" method="get">
-		    			<input type="hidden" name="_token" value="{{csrf_token()}}">
+		    		<form class="form" action="{{route('admin.books.destroy', ['book' => $book->id])}}" method="POST">
+		    			
+		    			@csrf
+		    			@method('DELETE')
+
 			        	<div class="modal-header">
 			        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
 			        		<h4 class="modal-title custom_align" id="Heading">Excluir Livro</h4>
