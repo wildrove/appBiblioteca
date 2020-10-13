@@ -3,7 +3,7 @@
 
 @section('content')
 
-	<h4 class="h4">Biblioteca - Editar Livro</h4>
+	<h4 class="edit-title">Biblioteca - Editar Livro <a class="btn btn-primary float-right" href="javascript:history.go(-1)">Voltar</a></h4>
 	<form class="form" action="{{route('admin.books.update', ['book' => $book->id])}}" method="post" enctype="multipart/form-data">
 		
 		@csrf

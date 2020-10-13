@@ -15,6 +15,46 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 <body class="">
+	<div class="mb-5"><!-- Inicio Div Navbar -->
+		<!--Navbar -->
+		<nav class="bg-dark mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1v fixed-top">
+		  <a class="navbar-brand" href="#">@LibApp</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+		    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+		    <ul class="navbar-nav mr-auto">
+		      <!--<li class="nav-item active">
+		        <a class="nav-link" href="#">Inicio
+		          <span class="sr-only">(current)</span>
+		        </a>
+		      </li>-->
+		      <li class="nav-item click-user">
+		        <a class="nav-link" href="{{route('admin.users.index')}}">Usuários</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="{{route('admin.books.index')}}">Livros</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Livros alugados</a>
+		      </li>
+		    </ul>
+		    <ul class="navbar-nav ml-auto nav-flex-icons">
+		      <li class="nav-item avatar">
+		        <a class="nav-link p-0" href="#">
+		          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+		            alt="avatar image" height="35">
+		        </a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Sair</a>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+		<!--/.Navbar -->
+	</div><!-- Fim Div Navbar -->
 	<div class="container">
 
 		@include('flash::message')
@@ -24,7 +64,7 @@
 	
 	<!-- Close Flash Message -->
 	<script>
-		$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+		$('div.alert').not('.alert-important').delay(3000).fadeOut(350).css('margin-top', 50);
 		$('div.alert').addClass('mt-3 mb-3');
 	</script>
 	<!-- Bootstrap 4 Javascript -->

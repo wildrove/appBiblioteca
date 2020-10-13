@@ -17,7 +17,7 @@
 	    				<h5 class="card-title">{{$book_name}}</h5>
 	    				<p class="card-text">
 	    					@php
-	    						$test = substr($book->description, 0, 40);
+	    						$test = substr($book->description, 0, 50);
 	    					@endphp
 	    					{{$test}}.. <a href="nav-link"><br>(continue lendo...)</a>
 	    				</p>

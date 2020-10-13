@@ -3,7 +3,7 @@
 
 @section('content')
 
-	<h4 class="h4">Biblioteca - Cadastro de Livros</h4>
+	<h3 class="text-center create-title">Biblioteca - Cadastro de Livros <a class="btn btn-primary float-right" href="javascript:history.go(-1)">Voltar</a></h3>
 	<form class="form" action="{{route('admin.books.store')}}" method="post" enctype="multipart/form-data">
 		
 		@csrf

@@ -3,8 +3,8 @@
 
 @section('content')
 
+	<h3 class=" edit-title">Biblioteca - Editar Usuário <a class="btn btn-primary float-right" href="javascript:history.go(-1)">Voltar</a></h3>
 	<form class="form" action="{{route('admin.users.update', ['user' => $user->id])}}" method="post">
-		<h4 class="">Biblioteca - Editar Usuário</h4>
 		
 		@csrf
 		@method('PUT')

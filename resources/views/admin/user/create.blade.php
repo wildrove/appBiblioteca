@@ -3,8 +3,8 @@
 
 @section('content')
 
+	<h3 class="text-center create-title">Biblioteca - Cadastro de Usuário <a class="btn btn-primary float-right" href="javascript:history.go(-1)">Voltar</a></h3>
 	<form class="form" method="post" action="{{route('admin.users.store')}}">
-		<h4 class="">Biblioteca - Cadastro de Usuário</h4>
 		<!--<input type="hidden" name="_token" value="{{csrf_token()}}"> -->
 		
 		@csrf
