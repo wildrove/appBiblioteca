@@ -11,7 +11,7 @@
 		        		<a class=" btn btn-dark mb-3 mr-2" href="{{route('admin.books.create')}}" data-toggle="tooltip" title="novo livro" style="float: right">
 		        			<i class="fas fa-book-medical fa-lg"></i>
 		        		</a>
-		        		<h4 class="h4">Biblioteca - Livros</h4>
+		        		<h3 class="">Biblioteca - Livros</h3>
 		        	</div>
 		        	<div class="table-responsive">
 		     			<table id="mytable" class="table table-bordred table-striped">  

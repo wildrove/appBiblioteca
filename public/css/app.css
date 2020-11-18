@@ -1,17 +1,47 @@
+/* ================= Navbar Principal =================== */
 nav{
 	font-family: Arial, Helvetica, sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	size: 16px;
 	color: #333333;
-	line-height: 46px;
+	line-height: 55px;
 }
 
-/* ===================== Create General ========================== */
-.create-title,
-.edit-title{
-	margin-top: 100px;
+.li-div-bottom{
+
+	height: 4px;
+	position: relative;
+	bottom: -10px;
+}
+
+.nav-margin-bottom{
+
+	margin-bottom: 100px;
+}
+
+
+/* ===================== Admin Create General ========================== */
+.create-title-user,
+.edit-title-user,
+.admin-edit{
+
+	margin-top: 150px;
 	margin-bottom: 30px;
+}
+
+.create-title-book,
+.edit-title-book{
+
+	margin-top: 150px;
+	margin-bottom: 30px;
+}
+
+/* ===================== Admin Edit General ======================== */
+
+.submit-book{
+	width: 50%;
+	margin-left: 30%;
 }
 /* ===================== Create Book ============================== */
 
