@@ -3,7 +3,7 @@
 
 @section('content')
 
-	<h3 class="text-center create-title">Biblioteca - Cadastro de Livros <a class="btn btn-primary float-right" href="javascript:history.go(-1)">Voltar</a></h3>
+	<h3 class="text-center create-title-book">Biblioteca - Cadastro de Livros <a class="btn btn-primary float-right" href="javascript:history.go(-1)">Voltar</a></h3>
 	<form class="form" action="{{route('admin.books.store')}}" method="post" enctype="multipart/form-data">
 		
 		@csrf
@@ -11,11 +11,11 @@
 		<div class=" form-row"><!-- Iicio Linha 1 -->
 			<div class="col-md-6 form-group">
 				<label for="book_name">Nome Livro:</label>
-				<input class="form-control" type="text" name="book_name">
+				<input class="form-control" type="text" name="book_name" required="">
 			</div>
 			<div class="col-md-6 form-group">
 				<label for="author_name">Nome Autor:</label>
-				<input class="form-control" type="text" name="author_name">
+				<input class="form-control" type="text" name="author_name" required="">
 			</div>
 		</div><!-- Fim linha 1 -->
 		<div class="form-row"><!-- Inicio Linha 2 -->
@@ -31,7 +31,7 @@
 		<div class="form-row"><!-- Inicio linha 3 -->
 			<div class="col-md-6 form-group">
 				<label for="publishing_name">Nome Editora:</label>
-				<input class="form-control" type="text" name="publishing_name">
+				<input class="form-control" type="text" name="publishing_name" required="">
 			</div>
 			<div class="col-md-6 form-group">
 				<label for="release_date">Ano Lançamento:</label>
@@ -51,7 +51,7 @@
 				</select>
 			</div>
 			<div class="col-md-6 form-group mt-4">
-				<button class="btn btn-success btn-block mt-2" type="submit">Criar Livro</button>
+				<button class="btn btn-success btn-block mt-2 submit-book" type="submit">Criar Livro</button>
 			</div>
 		</div><!-- Fim Linha 4 -->
 	</form>

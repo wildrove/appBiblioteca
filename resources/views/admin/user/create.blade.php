@@ -3,7 +3,7 @@
 
 @section('content')
 
-	<h3 class="text-center create-title">Biblioteca - Cadastro de Usuário <a class="btn btn-primary float-right" href="javascript:history.go(-1)">Voltar</a></h3>
+	<h3 class="text-center create-title-user">Biblioteca - Cadastro de Usuário <a class="btn btn-primary float-right" href="javascript:history.go(-1)">Voltar</a></h3>
 	<form class="form" method="post" action="{{route('admin.users.store')}}">
 		<!--<input type="hidden" name="_token" value="{{csrf_token()}}"> -->
 		

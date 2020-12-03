@@ -11,7 +11,7 @@
 		        		<a class=" btn btn-dark mb-3" href="{{route('admin.users.create')}}" data-toggle="tooltip" title="novo usuário" style="float: right">
 		        			<i class="fas fa-user-plus fa-lg"></i>
 		        		</a>
-		        		<h4 class="h4">Biblioteca - Usuários</h4>
+		        		<h3 class="">Biblioteca - Usuários</h3>
 		        	</div>
 		        	<div class="table-responsive">
 		     			<table id="mytable" class="table table-bordred table-striped">  
